@@ -1,4 +1,4 @@
-EX 1: A aplicação deve obter por meio do usuário qual será a operação desejada,
+Ex 1: A aplicação deve obter por meio do usuário qual será a operação desejada,
 dois números e depois informar o resultado
 
 Desafio 2: Após a aplicação informar o resultado, deverá ser perguntado ao
