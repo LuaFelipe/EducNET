@@ -1,0 +1,50 @@
+using System.Numerics;
+
+namespace CalculatorDesafio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string continuar; //Var to repeat the program
+
+            do
+            {
+                Console.WriteLine("Which operator do you want to use? ");
+                string operation = Console.ReadLine();          //Read the operator
+                Console.WriteLine("Type a number: ");
+                int numA = Convert.ToInt32(Console.ReadLine()); //Read a first number
+                Console.WriteLine("Type other number: ");
+                int numB = Convert.ToInt32(Console.ReadLine()); //Read a second number
+
+                if (operation == "+")
+                {
+                    Console.WriteLine("The sum result is: ");
+                    Console.WriteLine(numA + numB);
+                }
+                else if (operation == "-")
+                {
+                    Console.WriteLine("The subtract result is: ");
+                    Console.WriteLine(numA - numB);
+                }
+                else if (operation == "*")
+                {
+                    Console.WriteLine("The multiply result is: ");
+                    Console.WriteLine(numA * numB);
+                }
+                else if (operation == "/")
+                {
+                    Console.WriteLine("The division result is: ");
+                    Console.WriteLine(numA / numB);
+                }
+                else                                           
+                {
+                    Console.WriteLine(" Invalid Operator!\nOnly use: '+', '-', '*' or '/'. "); //If user input != allowed operator
+                }
+                Console.WriteLine("\n Try again? (Y/N) ");
+                continuar = Console.ReadLine();                       //Read if the user want to continue
+            } while (continuar.ToUpper() == "Y" || continuar.ToUpper() == "YES");
+        }
+    }
+}
+
