@@ -1,0 +1,60 @@
+namespace Desafio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite a expressão matemática (ex: 3 + 5): ");
+            string expression = Console.ReadLine();
+
+            // Remove blank spaces in the "str expression" >> (3 + 1) = (3+1)
+            expression = expression.Replace(" ", "");
+
+            // Divide the expression in number, operator and number
+            string[] parts = expression.Split(new char[] { '+', '-', '*', '/' });
+
+            if (parts.Length == 2)
+            {
+                // Convert the number parts to intengers
+                if (int.TryParse(parts[0], out int number1) && int.TryParse(parts[1], out int number2))
+                {
+                    // Find the operator
+                    char op = expression[parts[0].Length];
+
+                    //Console.WriteLine(op) - Verified*;
+
+                    // Run the operation 
+                    switch (op)
+                    {
+                        case '+':
+                            Console.WriteLine($"\n{number1} + {number2} = {number1 + number2}");
+                            break;
+                        case '-':
+                            Console.WriteLine($"\n{number1} - {number2} = {number1 - number2}");
+                            break;
+                        case '*':
+                            Console.WriteLine($"\n{number1} * {number2} = {number1 * number2}");
+                            break;
+                        case '/':
+                            if (number2 != 0)
+                                Console.WriteLine($"\n{number1} / {number2} = {((double)number1 / number2)}");
+                            else
+                                Console.WriteLine("Divisão por zero não é permitida.");
+                            break;
+                        default:
+                            Console.WriteLine("Operador inválido.");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Entrada inválida para números.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Formato de expressão inválido.");
+            }
+        }
+    }
+}
