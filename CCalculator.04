@@ -1,0 +1,23 @@
+namespace Desafio4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Type a year: ");
+            int year = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(year);
+            int converted = year % 4;
+            Console.WriteLine(converted);
+
+            if ((converted == 0 && year % 100 != 0) || (year % 400 == 0))
+            {
+                Console.WriteLine("O ano é bissexto.");
+            }
+            else
+            {
+                Console.WriteLine("O ano não é bissexto.");
+            }
+        }
+    }
+}
